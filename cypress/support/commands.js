@@ -26,6 +26,8 @@
 // const cypress = require("cypress");
 
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import 'cypress-real-events/support';
+
 Cypress.Commands.add('getByName', (label) => {
     cy.get(`[name="${label}"]`)
 })

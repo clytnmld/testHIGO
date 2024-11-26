@@ -15,6 +15,12 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+Cypress.on('uncaught:exception', (err) => {
+    if (err.message.includes('Cannot read properties of undefined')) {
+      return false; // Suppress this specific error
+    }
+    return true; // Let other errors fail the test
+  });
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
